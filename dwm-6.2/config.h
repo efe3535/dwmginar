@@ -15,12 +15,13 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 // static const char *fonts[]          = { "Jetbrains Mono:size=8" };
 // static const char *fonts[]	    = {"Fira Code Nerd Font:size=9"};
 static const char *fonts[]		=	{ "JetBrainsMonoMedium Nerd Font:size=9" };
+// static const char *fonts[]			=	{ "JetBrainsMonoMedium Nerd Font:size=10" };
 static const char dmenufont[]       = "Iosevka Nerd Font:size=12";
-static const char col_gray1[]       = "#000000"; // prev #00020e    
-static const char col_gray2[]       = "#fabd2f"; // prev #4f10d6 #ffb86c
+static const char col_gray1[]       = "#00080B"; // prev #00020e    
+static const char col_gray2[]       = "#a8484a"; // prev #4f10d6 #ffb86c #fabd2f
 static const char col_gray3[]       = "#d5c4a1"; // prev #ff79c6 % prev #808080
-static const char col_gray4[]       = "#fabd2f"; // prev #ffb86c & prev #6ccc8f
-static const char col_cyan[]        = "#000000"; // prev #00020e 
+static const char col_gray4[]       = "#a8484a"; // prev #ffb86c & prev #6ccc8f
+static const char col_cyan[]        = "#00080B"; // prev #00020e 
 static const char *colors[][3]      = {
     /*               fg         bg         border   */
     [SchemeNorm] = { col_gray3, col_gray1, col_gray2 }, // prev col_cyan
@@ -30,9 +31,12 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+// static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+// static const char *tags[] = { " ", "ﭮ", "" ,"", "", "", "7", "8", "" };
+static const char *tags[] = { " ¹", "ﭮ ²", " ³" ," ⁴", " ⁵", " ⁶", "7", "8", " ⁹" };
+
 // static const char *tags[] = {"1️⃣","2️⃣","3️⃣","4️⃣","5️⃣","6️⃣","7️⃣","8️⃣","9️⃣"};
-static const unsigned int gappx     = 10;        /* gaps between windows */
+static const unsigned int gappx     = 15;        /* gaps between windows */
 //static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
 //static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
 //static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
