@@ -70,8 +70,8 @@ static const struct arg args[] = {
 // { run_command, "[ %s] ", "echo \"$(playerctl metadata --format ' {{ artist }} - {{ title }}') $(sh scripts/playerctlstatus.sh)\"" }, 
 	// playerctl status | grep "Playing" > /tmp/test.txt && echo 1 || echo 0
 	// { run_command, " %s | ", "playerctl status | grep Playing > /tmp/test.txt && echo  || echo  " },
-	{ run_command, "  %s | ", "echo $(playerctl metadata --format '{{ artist }} - {{ title }}') $(sh -c \"playerctl status | grep Playing > /tmp/test.txt && echo   ; playerctl status | grep Paused >> /dev/null && echo \" && echo '' || exit)" },
-
+	// { run_command, "  %s | ", "echo $(playerctl metadata --format '{{ artist }} - {{ title }}') && echo $(sh -c \"playerctl status | grep Playing > /tmp/test.txt && echo   ; playerctl status | grep Paused >> /dev/null && echo \" && echo '' || exit)" },
+{ run_command, "  %s | ", "echo $(playerctl metadata --format '{{ artist }} - {{ title }}') $(sh -c \"playerctl status | grep Playing > /dev/null && echo   ; playerctl status | grep Paused >> /dev/null && echo \" && echo '' || exit)" },
 //	{ cpu_perc, "  %s%% | ", NULL	        },
 //	{ cpu_freq, "%sHZ] ", 		NULL			},
 /*	{ run_command, "%s] ", "sensors | awk '/^Package/ {print $4}'" }, */

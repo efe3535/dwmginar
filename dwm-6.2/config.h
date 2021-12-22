@@ -8,7 +8,7 @@ static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int swallowfloating    = 0; 
 static const int showsystray        = 1;     /* 0 means no systray */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 0;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -17,11 +17,11 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]		=	{ "Hack Nerd Font:size=9" };
 // static const char *fonts[]			=	{ "JetBrainsMonoMedium Nerd Font:size=10" };
 static const char dmenufont[]       = "Iosevka Nerd Font:size=12";
-static const char col_gray1[]       = "#00080B"; // prev #00020e    
-static const char col_gray2[]       = "#a8484a"; // prev #4f10d6 #ffb86c #fabd2f
+static const char col_gray1[]       = "#0f0300"; // prev #00020e    
+static const char col_gray2[]       = "#df4418"; // prev c5cce1 #4f10d6 #ffb86c #fabd2f
 static const char col_gray3[]       = "#d5c4a1"; // prev #ff79c6 % prev #808080
-static const char col_gray4[]       = "#a8484a"; // prev #ffb86c & prev #6ccc8f
-static const char col_cyan[]        = "#00080B"; // prev #00020e 
+static const char col_gray4[]       = "#f72504"; // prev #ffb86c & prev #6ccc8f & 4b78ff
+static const char col_cyan[]        = "#0f0300"; // prev #00020e 
 static const char *colors[][3]      = {
     /*               fg         bg         border   */
     [SchemeNorm] = { col_gray3, col_gray1, col_gray2 }, // prev col_cyan
@@ -33,7 +33,7 @@ static const char *colors[][3]      = {
 /* tagging */
 // static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 // static const char *tags[] = { " ", "ﭮ", "" ,"", "", "", "7", "8", "" };
-static const char *tags[] = { " ¹", "ﭮ ²", " ³" ," ⁴", " ⁵", " ⁶", "7", "8", " ⁹" };
+static const char *tags[] = { " ¹", "ﭮ ²", " ³" ," ⁴", " ⁵", " ⁶", " ⁷", "ﲎ ⁸", " ⁹" };
 
 // static const char *tags[] = {"1️⃣","2️⃣","3️⃣","4️⃣","5️⃣","6️⃣","7️⃣","8️⃣","9️⃣"};
 static const unsigned int gappx     = 15;        /* gaps between windows */
