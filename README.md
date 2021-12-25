@@ -1,3 +1,4 @@
-![image](https://user-images.githubusercontent.com/46342237/146555637-ccc349a3-8a42-4e37-a013-6482341040a5.png)
-
+![image](https://user-images.githubusercontent.com/46342237/147393210-dc856e08-ce25-45c7-9870-604f8f692bcd.png)
 efe3535's DWM setup!
+
+Compile 'em all with `sudo make clean install`
