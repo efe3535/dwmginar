@@ -1,5 +1,34 @@
---- dwm.c
-+++ dwm.c
+From 69f91089d9248fa9695eb925956e255a215171b8 Mon Sep 17 00:00:00 2001
+From: bakkeby <bakkeby@gmail.com>
+Date: Tue, 7 Apr 2020 12:29:08 +0200
+Subject: [PATCH] Adding 6.2 center patch with multi-monitor fix and
+ auto-centering of floating popup windows
+---
+ config.def.h |  6 +++---
+ dwm.c        | 13 +++++++++++--
+ 2 files changed, 14 insertions(+), 5 deletions(-)
+
+diff --git a/config.def.h b/config.def.h
+index 1c0b587..44b46e5 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -26,9 +26,9 @@ static const Rule rules[] = {
+ 	 *	WM_CLASS(STRING) = instance, class
+ 	 *	WM_NAME(STRING) = title
+ 	 */
+-	/* class      instance    title       tags mask     isfloating   monitor */
+-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
++	/* class      instance    title       tags mask     iscentered   isfloating   monitor */
++	{ "Gimp",     NULL,       NULL,       0,            0,           1,           -1 },
++	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           0,           -1 },
+ };
+ 
+ /* layout(s) */
+diff --git a/dwm.c b/dwm.c
+index 4465af1..ab33757 100644
+--- a/dwm.c
++++ b/dwm.c
 @@ -92,7 +92,7 @@ struct Client {
  	int basew, baseh, incw, inch, maxw, maxh, minw, minh;
  	int bw, oldbw;
@@ -56,3 +85,6 @@
  }
  
  void
+-- 
+2.17.1
+

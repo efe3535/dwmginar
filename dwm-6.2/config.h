@@ -17,11 +17,11 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]		=	{ "Hack Nerd Font:size=9" };
 // static const char *fonts[]			=	{ "JetBrainsMonoMedium Nerd Font:size=10" };
 static const char dmenufont[]       = "Iosevka Nerd Font:size=12";
-static const char col_gray1[]       = "#0f0300"; // prev #00020e    
-static const char col_gray2[]       = "#df4418"; // prev c5cce1 #4f10d6 #ffb86c #fabd2f
+static const char col_gray1[]       = "#000b05"; // prev #00020e    
+static const char col_gray2[]       = "#32c15c"; // prev df4418  c5cce1 #4f10d6 #ffb86c #fabd2f
 static const char col_gray3[]       = "#d5c4a1"; // prev #ff79c6 % prev #808080
-static const char col_gray4[]       = "#f72504"; // prev #ffb86c & prev #6ccc8f & 4b78ff
-static const char col_cyan[]        = "#0f0300"; // prev #00020e 
+static const char col_gray4[]       = "#4eb500"; // prev f72504 #ffb86c & prev #6ccc8f & 4b78ff
+static const char col_cyan[]        = "#000b05"; // prev #00020e 
 static const char *colors[][3]      = {
     /*               fg         bg         border   */
     [SchemeNorm] = { col_gray3, col_gray1, col_gray2 }, // prev col_cyan
@@ -47,7 +47,10 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class           instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",           NULL,       NULL,       0,            1,           -1 },
+//	{ "Gimp",           NULL,       NULL,       0,            1,           -1 },
+	{ "Gimp",     NULL,       NULL,       0,            0,           1,           -1 },
+    // { "Firefox",  NULL,       NULL,       1 << 8,       0,           0,           -1 },
+
 	// { "xterm-256color",           NULL,       NULL,       0,            1,           -1 },
 };
 
