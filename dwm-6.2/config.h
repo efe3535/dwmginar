@@ -14,14 +14,15 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 // static const char *fonts[]          = { "Jetbrains Mono:size=8" };
 // static const char *fonts[]	    = {"Fira Code Nerd Font:size=9"};
-static const char *fonts[]		=	{ "Hack Nerd Font:size=9" };
+static const char *fonts[]		=	{ "scientifica Nerd Font:size=12" ,"Hack Nerd Font:size=9" };
+// static const ichar *fonts[]			=	{ "scientifica Nerd Font:size=11" };
 // static const char *fonts[]			=	{ "JetBrainsMonoMedium Nerd Font:size=10" };
-static const char dmenufont[]       = "Iosevka Nerd Font:size=12";
-static const char col_gray1[]       = "#000b05"; // prev #00020e    
-static const char col_gray2[]       = "#32c15c"; // prev df4418  c5cce1 #4f10d6 #ffb86c #fabd2f
+static const char dmenufont[]       = "Hack Nerd Font:size=12";
+static const char col_gray1[]       = "#0c0501"; // prev #00020e    
+static const char col_gray2[]       = "#a45a30"; // prev df4418  c5cce1 #4f10d6 #ffb86c #fabd2f
 static const char col_gray3[]       = "#d5c4a1"; // prev #ff79c6 % prev #808080
-static const char col_gray4[]       = "#4eb500"; // prev f72504 #ffb86c & prev #6ccc8f & 4b78ff
-static const char col_cyan[]        = "#000b05"; // prev #00020e 
+static const char col_gray4[]       = "#a45a30"; // 4eb500 prev f72504 #ffb86c & prev #6ccc8f & 4b78ff
+static const char col_cyan[]        = "#0c0501"; // prev #00020e 
 static const char *colors[][3]      = {
     /*               fg         bg         border   */
     [SchemeNorm] = { col_gray3, col_gray1, col_gray2 }, // prev col_cyan
@@ -79,15 +80,17 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+// static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 //static const char *roficmd[] = { "rofi","-show-icons","-modi drun,run","-font 'Jetbrains Mono 12'", "-show drun", NULL };
 static const char *roficmd[] = { "rofi", "-show", "drun", "-show-icons","-font 'scientifica Nerd Font 12'", NULL };
+static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *termcmd[]  = { "st", "zsh", NULL };
 static const char *upvol[]   = { "amixer", "set", "Master", "5%+",     NULL };
 static const char *downvol[] = { "amixer", "set", "Master", "5%-",     NULL };
 static const char *mutevol[] = { "amixer", "set", "Master", "toggle",  NULL };
-
+static const char *lock[] = {"slock" , NULL };
 // playpause next prev
+static const char *ytmenu[] = {"ytfzf", "-D", NULL};
 static const char *playpause[] = { "playerctl", "play-pause", NULL };
 static const char *next[] = { "playerctl",  "next", NULL};
 static const char *prev[] = { "playerctl", "previous", NULL};
@@ -95,7 +98,9 @@ static const char *prev[] = { "playerctl", "previous", NULL};
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 //	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_d,      spawn,          {.v = roficmd } },
+	{ MODKEY|ShiftMask,				XK_l,	   spawn,		   {.v = lock    } },
+	{ MODKEY|ShiftMask,				XK_y,	   spawn,		   {.v = ytmenu} },
+	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },

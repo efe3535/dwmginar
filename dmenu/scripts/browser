@@ -1,0 +1,11 @@
+#!/bin/sh
+
+[ -n "$BROWSER" ] || BROWSER="firefox -new-tab"
+        SEARCHURL='https://duckduckgo.com/?q='
+        GOTOURL='' 
+        QUERY=$(echo '' | dmenu -p "Search / Go to:")
+        if [ -n "$QUERY" ]; then 
+                (echo $QUERY | grep '\.' >/dev/null && $BROWSER "${GOTOURL}${QUERY}" && echo case 1) ||
+                ($BROWSER "${SEARCHURL}${QUERY}" && echo case 2)
+
+fi

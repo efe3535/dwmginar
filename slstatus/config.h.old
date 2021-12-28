@@ -71,14 +71,14 @@ static const struct arg args[] = {
 	// playerctl status | grep "Playing" > /tmp/test.txt && echo 1 || echo 0
 	// { run_command, " %s | ", "playerctl status | grep Playing > /tmp/test.txt && echo  || echo  " },
 	// { run_command, "  %s | ", "echo $(playerctl metadata --format '{{ artist }} - {{ title }}') && echo $(sh -c \"playerctl status | grep Playing > /tmp/test.txt && echo   ; playerctl status | grep Paused >> /dev/null && echo \" && echo '' || exit)" },
-{ run_command, "  %s — ", "echo $(playerctl metadata --format '{{ artist }} - {{ title }}') $(sh -c \"playerctl status | grep Playing > /dev/null && echo   ; playerctl status | grep Paused >> /dev/null && echo \" && echo '' || exit)" },
+{ run_command, "  %s | ", "echo $(playerctl metadata --format '{{ artist }} - {{ title }}') $(sh -c \"playerctl status | grep Playing > /dev/null && echo   ; playerctl status | grep Paused >> /dev/null && echo \" && echo '' || exit)" },
 //	{ cpu_perc, "  %s%% | ", NULL	        },
 //	{ cpu_freq, "%sHZ] ", 		NULL			},
 /*	{ run_command, "%s] ", "sensors | awk '/^Package/ {print $4}'" }, */
 //	{ ram_perc, "[: %s%% ", NULL  	        },
-	{ run_command, " %sMiB — ", "free -m | awk '/^Mem/ {print $3}'"},
-	{ run_command, "  %s — ", "df -h /dev/disk/by-uuid/4a27a87b-ff8e-40e4-a5fa-9733caebb0e6 | grep \"/dev/\" |  awk '{print $4}'"},
-	{ battery_perc, ": %s% — ", "BAT0"		},
+	{ run_command, " %sMiB | ", "free -m | awk '/^Mem/ {print $3}'"},
+	{ run_command, "  %s | ", "df -h /dev/disk/by-uuid/4a27a87b-ff8e-40e4-a5fa-9733caebb0e6 | grep \"/dev/\" |  awk '{print $4}'"},
+	{ battery_perc, ": %s% | ", "BAT0"		},
 /*	{ run_command, "[: %s] ", "frct"},	*/
 	
 //	{ run_command, "[  %s] ", "date +\"%d/%m/%Y\"" },
