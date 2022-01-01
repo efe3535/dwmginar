@@ -90,6 +90,7 @@ static const char *downvol[] = { "amixer", "set", "Master", "5%-",     NULL };
 static const char *mutevol[] = { "amixer", "set", "Master", "toggle",  NULL };
 static const char *lock[] = {"slock" , NULL };
 // playpause next prev
+static const char *sstool[] = {"xfce4-screenshooter", NULL};
 static const char *ytmenu[] = {"ytfzf", "-D", NULL};
 static const char *playpause[] = { "playerctl", "play-pause", NULL };
 static const char *next[] = { "playerctl",  "next", NULL};
@@ -98,7 +99,9 @@ static const char *prev[] = { "playerctl", "previous", NULL};
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 //	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
+	// { MODKEY|ShiftMask,				XK_s,	   spawn		   { .v = sstool } },
 	{ MODKEY|ShiftMask,				XK_l,	   spawn,		   {.v = lock    } },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = sstool    } },
 	{ MODKEY|ShiftMask,				XK_y,	   spawn,		   {.v = ytmenu} },
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },

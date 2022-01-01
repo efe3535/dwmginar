@@ -6,8 +6,8 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "scientifica Nerd Font:pixelsize=16:antialias=true:autohint=true";
-static char *font2[] = { "scientifica Nerd Font:pixelsize=16:antialias=true:autohint=true" };
-static int borderpx = 2;
+static char *font2[] = { "scientifica Nerd Font:pixelsize=12:antialias=true:autohint=true" };
+static int borderpx = 4;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -17,7 +17,7 @@ static int borderpx = 2;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/bin/sh";
+static char *shell = "/bin/zsh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = NULL;
