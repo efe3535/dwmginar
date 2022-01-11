@@ -14,15 +14,19 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 // static const char *fonts[]          = { "Jetbrains Mono:size=8" };
 // static const char *fonts[]	    = {"Fira Code Nerd Font:size=9"};
-static const char *fonts[]		=	{ "scientifica Nerd Font:size=12" ,"Hack Nerd Font:size=9" };
+static const unsigned int ulinepad	= 5;	/* horizontal padding between the underline and tag */
+static const unsigned int ulinestroke	= 2;	/* thickness / height of the underline */
+static const unsigned int ulinevoffset	= 0;	/* how far above the bottom of the bar the line should appear */
+static const int ulineall 		= 0;	/* 1 to show underline on all tags, 0 for just the active ones */
+static const char *fonts[]		=	{ "scientifica:size=12" ,"Hack Nerd Font:size=9" };
 // static const ichar *fonts[]			=	{ "scientifica Nerd Font:size=11" };
 // static const char *fonts[]			=	{ "JetBrainsMonoMedium Nerd Font:size=10" };
 static const char dmenufont[]       = "Hack Nerd Font:size=12";
-static const char col_gray1[]       = "#0c0501"; // prev #00020e    
-static const char col_gray2[]       = "#a45a30"; // prev df4418  c5cce1 #4f10d6 #ffb86c #fabd2f
-static const char col_gray3[]       = "#d5c4a1"; // prev #ff79c6 % prev #808080
-static const char col_gray4[]       = "#a45a30"; // 4eb500 prev f72504 #ffb86c & prev #6ccc8f & 4b78ff
-static const char col_cyan[]        = "#0c0501"; // prev #00020e 
+static const char col_gray1[]       = "#100914"; // prev #00020e    
+static const char col_gray2[]       = "#ab7ac0"; // prev a45a30 df4418  c5cce1 #4f10d6 #ffb86c #fabd2f
+static const char col_gray3[]       = "#ebdbb2"; // prev d5c4a1 #ff79c6 % prev #808080
+static const char col_gray4[]       = "#ab7ac0"; // a45a30 4eb500 prev f72504 #ffb86c & prev #6ccc8f & 4b78ff
+static const char col_cyan[]        = "#100914"; // prev #00020e 
 static const char *colors[][3]      = {
     /*               fg         bg         border   */
     [SchemeNorm] = { col_gray3, col_gray1, col_gray2 }, // prev col_cyan
