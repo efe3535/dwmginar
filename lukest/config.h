@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "scientifica:pixelsize=16:antialias=true:autohint=true";
+static char *font = "Liga scientifica:pixelsize=16:antialias=true:autohint=true";
 static char *font2[] = { "Hack Nerd Font:pixelsize=12:antialias=true:autohint=true" };
 static int borderpx = 4;
 
@@ -107,13 +107,13 @@ char *termname = "xterm-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.85;
+float alpha = 1;
 float alphaOffset = 0.0;
 float alphaUnfocus;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	"#000000", /* hard contrast: #1d2021 / soft contrast: #32302f */
+	"#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
 	"#cc241d",
 	"#98971a",
 	"#d79921",

@@ -22,15 +22,14 @@ static const char *fonts[]		=	{ "scientifica:size=12" ,"Hack Nerd Font:size=9" }
 // static const ichar *fonts[]			=	{ "scientifica Nerd Font:size=11" };
 // static const char *fonts[]			=	{ "JetBrainsMonoMedium Nerd Font:size=10" };
 static const char dmenufont[]       = "Hack Nerd Font:size=12";
-static const char col_gray1[]       = "#100914"; // prev #00020e    
-static const char col_gray2[]       = "#ab7ac0"; // prev a45a30 df4418  c5cce1 #4f10d6 #ffb86c #fabd2f
+static const char col_gray1[]       = "#121212"; //100914 prev #00020e    
+static const char col_gray2[]       = "#504945"; //ab7ac0 prev a45a30 df4418  c5cce1 #4f10d6 #ffb86c #fabd2f
 static const char col_gray3[]       = "#ebdbb2"; // prev d5c4a1 #ff79c6 % prev #808080
-static const char col_gray4[]       = "#ab7ac0"; // a45a30 4eb500 prev f72504 #ffb86c & prev #6ccc8f & 4b78ff
-static const char col_cyan[]        = "#100914"; // prev #00020e 
+static const char col_gray4[]       = "#d65d0e"; //ab7ac0 a45a30 4eb500 prev f72504 #ffb86c & prev #6ccc8f & 4b78ff
 static const char *colors[][3]      = {
     /*               fg         bg         border   */
     [SchemeNorm] = { col_gray3, col_gray1, col_gray2 }, // prev col_cyan
-    [SchemeSel]  = { col_gray4, col_cyan,  col_gray2  },
+    [SchemeSel]  = { col_gray4, col_gray1,  col_gray2  },
 //    [SchemeWarn] =   { "#d3869b", col_gray1, col_gray2 },
 //    [SchemeUrgent]=  { "#8ec07c", col_gray1,    col_gray2 },
 };
@@ -38,8 +37,8 @@ static const char *colors[][3]      = {
 /* tagging */
 // static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 // static const char *tags[] = { " ", "ﭮ", "" ,"", "", "", "7", "8", "" };
-static const char *tags[] = { " ¹", "ﭮ ²", " ³" ," ⁴", " ⁵", " ⁶", " ⁷", "ﲎ ⁸", " ⁹" };
-
+// static const char *tags[] = { " ¹", "ﭮ ²", " ³" ," ⁴", " ⁵", " ⁶", " ⁷", "ﲎ ⁸", " ⁹" };
+static const char *tags[] = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };
 // static const char *tags[] = {"1️⃣","2️⃣","3️⃣","4️⃣","5️⃣","6️⃣","7️⃣","8️⃣","9️⃣"};
 static const unsigned int gappx     = 15;        /* gaps between windows */
 //static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
@@ -95,6 +94,7 @@ static const char *mutevol[] = { "amixer", "set", "Master", "toggle",  NULL };
 static const char *lock[] = {"slock" , NULL };
 // playpause next prev
 static const char *sstool[] = {"xfce4-screenshooter", NULL};
+static const char *ranger[] = {"st", "-e", "ranger", "/home/enginar/", NULL};
 static const char *ytmenu[] = {"ytfzf", "-D", NULL};
 static const char *playpause[] = { "playerctl", "play-pause", NULL };
 static const char *next[] = { "playerctl",  "next", NULL};
@@ -105,6 +105,7 @@ static Key keys[] = {
 //	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
 	// { MODKEY|ShiftMask,				XK_s,	   spawn		   { .v = sstool } },
 	{ MODKEY|ShiftMask,				XK_l,	   spawn,		   {.v = lock    } },
+	{ MODKEY|ShiftMask,				XK_r,	   spawn,		   { .v = ranger } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = sstool    } },
 	{ MODKEY|ShiftMask,				XK_y,	   spawn,		   {.v = ytmenu} },
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
