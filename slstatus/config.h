@@ -77,11 +77,11 @@ static const struct arg args[] = {
 /*	{ run_command, "%s] ", "sensors | awk '/^Package/ {print $4}'" }, */
 //	{ ram_perc, "[: %s%% ", NULL  	        },
 	{ run_command, " %sMiB — ", "free -m | awk '/^Mem/ {print $3}'"},
-	{ run_command, "  %s — ", "df -h /dev/disk/by-uuid/6be8b0df-ae3f-4f87-a6a6-ef3a619c43a8 | grep \"/dev/\" |  awk '{print $4}'"},
+	{ run_command, "  %s — ", "df -h /dev/disk/by-uuid/a5260739-bfd5-4504-a783-986bbbbe579f | grep \"/dev/\" |  awk '{print $4}'"},
 	{ battery_perc, ": %s% — ", "BAT0"		},
 /*	{ run_command, "[: %s] ", "frct"},	*/
 	
 //	{ run_command, "[  %s] ", "date +\"%d/%m/%Y\"" },
-	{ datetime, " %s ",           "%T  "       },
+	{ datetime, " %s ",           "%T "       },
 
 };

@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liga scientifica:pixelsize=16:antialias=true:autohint=true";
+static char *font = "scientifica:pixelsize=16:antialias=true:autohint=true";
 static char *font2[] = { "Hack Nerd Font:pixelsize=12:antialias=true:autohint=true" };
 static int borderpx = 4;
 
