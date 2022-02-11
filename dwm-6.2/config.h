@@ -22,7 +22,7 @@ static const char *fonts[]		=	{ "scientifica:size=12" ,"Hack Nerd Font:size=9" }
 // static const ichar *fonts[]			=	{ "scientifica Nerd Font:size=11" };
 // static const char *fonts[]			=	{ "JetBrainsMonoMedium Nerd Font:size=10" };
 static const char dmenufont[]       = "Hack Nerd Font:size=12";
-static const char col_gray1[]       = "#121212"; //100914 prev #00020e    
+static const char col_gray1[]       = "#161616"; //100914 prev #00020e    
 static const char col_gray2[]       = "#504945"; //ab7ac0 prev a45a30 df4418  c5cce1 #4f10d6 #ffb86c #fabd2f
 static const char col_gray3[]       = "#ebdbb2"; // prev d5c4a1 #ff79c6 % prev #808080
 static const char col_gray4[]       = "#d65d0e"; //ab7ac0 a45a30 4eb500 prev f72504 #ffb86c & prev #6ccc8f & 4b78ff
