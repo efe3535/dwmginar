@@ -6,6 +6,7 @@ let g:loaded_matchparen=1
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 set laststatus=2
 set t_Co=256
+set mouse=a
 nmap <F6> :NERDTreeToggle<CR>
 nnoremap <C-b> :NERDTreeToggle<CR>
 set guicursor=
@@ -30,25 +31,35 @@ inoremap <C-e> <Esc>GA
 nnoremap <C-e> <Esc>GA
 " inoremap <C-t> :term<cr> <C-w> <S-k>
 " nnoremap <C-t> :term <cr>
-inoremap <C-tab> :tabnext<cr>
-nnoremap <C-tab> :tabnext<cr>
 
 set termguicolors
+set t_8f=[38;2;%lu;%lu;%lum
+set t_8b=[48;2;%lu;%lu;%lum
+" set ttymouse=sgr
 set background=dark
 let g:gruvbox_contrast_dark="hard"
-let g:airline_theme='lighthaus'
+" let g:airline_theme='Tomorrow-Night-Bright'
+" let g:airline#extensions#tabline#enabled = 1
 " let g:airline_powerline_fonts = 1
-let g:vimdiscord = 1
+" let g:vimdiscord = 1
 set tabstop=4
 set shiftwidth=4
 set noexpandtab
 set autoindent
-colorscheme gruvbox
-highlight Normal     ctermbg=NONE guibg=NONE
-highlight LineNr     ctermbg=NONE guibg=NONE
-highlight SignColumn ctermbg=NONE guibg=NONE
+" colorscheme Tomorrow-Night-Bright  
+colorscheme gruvbox 
+"highlight Normal     ctermbg=NONE guibg=NONE
+"highlight LineNr     ctermbg=NONE guibg=NONE
+"highlight SignColumn ctermbg=NONE guibg=NONE
 
 set completeopt=menu,menuone,noselect
+
+lua << EOF
+  require("flutter-tools").setup{} -- use defaults
+EOF
+
+hi Normal guibg=NONE ctermbg=NONE
+
 
 lua <<EOF
   -- Setup nvim-cmp.
@@ -78,7 +89,8 @@ lua <<EOF
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
       { name = 'vsnip' }, -- For vsnip users.
-      -- { name = 'luasnip' }, -- For luasnip users.
+	  { max_item_count = 7 }
+	  -- { name = 'luasnip' }, -- For luasnip users.
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
     }, {
@@ -108,6 +120,9 @@ lua <<EOF
   require('lspconfig')['pyright'].setup {
     capabilities = capabilities
   }
+  require'lspconfig'.html.setup{
+	capabilities = capabilities
+  }
 
   require('lspconfig')['tsserver'].setup {
      capabilities = capabilities
@@ -124,11 +139,15 @@ lua <<EOF
   require('lspconfig')['rust_analyzer'].setup {
   	 capabilities = capabilities
   }
+  
+  require('lspconfig')['dartls'].setup {
+	 capabilities = capabilities
+  }
 EOF
-
 
 if has("autocmd")
   au InsertEnter * silent execute "!sed -i.bak -e 's/TERMINAL_CURSOR_SHAPE_BLOCK/TERMINAL_CURSOR_SHAPE_UNDERLINE/' ~/.config/xfce4/terminal/terminalrc"
   au InsertLeave * silent execute "!sed -i.bak -e 's/TERMINAL_CURSOR_SHAPE_UNDERLINE/TERMINAL_CURSOR_SHAPE_BLOCK/' ~/.config/xfce4/terminal/terminalrc"
   au VimLeave * silent execute "!sed -i.bak -e 's/TERMINAL_CURSOR_SHAPE_UNDERLINE/TERMINAL_CURSOR_SHAPE_BLOCK/' ~/.config/xfce4/terminal/terminalrc"
 endif
+
