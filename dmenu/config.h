@@ -11,10 +11,11 @@ static const char *fonts[] = {
 	"Hack Nerd Font:pixelsize=10:antialias=true:autohint=true"
 };
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
+
 static const char *colors[SchemeLast][2] = {
 	/*     						 fg           bg       */
 	[SchemeNorm] = 			{ "#ebdbb2", "#1d2021" },
-	[SchemeSel] = 			{ "#d5c4a1", "#d65d0e" },
+	[SchemeSel] = 			{ "#e0c49c", "#6D5653" },
 	[SchemeSelHighlight] = 	{ "#ebdbb2", "#1d2021" },
 	[SchemeNormHighlight] = { "#ebdbb2", "#1d2021" },
 	[SchemeOut] = 			{ "#ebdbb2", "#1d2021" },

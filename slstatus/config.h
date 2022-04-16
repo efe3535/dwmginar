@@ -71,17 +71,24 @@ static const struct arg args[] = {
 	// playerctl status | grep "Playing" > /tmp/test.txt && echo 1 || echo 0
 	// { run_command, " %s | ", "playerctl status | grep Playing > /tmp/test.txt && echo  || echo  " },
 	// { run_command, "  %s | ", "echo $(playerctl metadata --format '{{ artist }} - {{ title }}') && echo $(sh -c \"playerctl status | grep Playing > /tmp/test.txt && echo   ; playerctl status | grep Paused >> /dev/null && echo \" && echo '' || exit)" },
-{ run_command, "  %s — ", "echo $(playerctl metadata --format '{{ artist }} - {{ title }}') $(sh -c \"playerctl status | grep Playing > /dev/null && echo   ; playerctl status | grep Paused >> /dev/null && echo \" && echo '' || exit)" },
+
+// { run_command, "  %s — ", "echo $(playerctl metadata --format '{{ artist }} - {{ title }}' | tr \"[:upper:]\" \"[:lower:]\") $(sh -c \"playerctl status | grep Playing > /dev/null && echo   ; playerctl status | grep Paused >> /dev/null && echo \" && echo '' || exit)" },
+
+
+{ run_command, "playing %s — ", "echo $(playerctl metadata --player=spotify,cmus  --format '{{ artist }} - {{ title }}' | sed 's/./\\l&/g' ) " },
+	
+
+
 //	{ cpu_perc, "  %s%% | ", NULL	        },
 //	{ cpu_freq, "%sHZ] ", 		NULL			},
 /*	{ run_command, "%s] ", "sensors | awk '/^Package/ {print $4}'" }, */
 //	{ ram_perc, "[: %s%% ", NULL  	        },
-	{ run_command, " %sMiB — ", "free -m | awk '/^Mem/ {print $3}'"},
-	{ run_command, "  %s — ", "df -h /dev/disk/by-uuid/a5260739-bfd5-4504-a783-986bbbbe579f | grep \"/dev/\" |  awk '{print $4}'"},
-	{ battery_perc, ": %s% — ", "BAT0"		},
+	{ run_command, "ram %sm — ", "free -m | awk '/^Mem/ {print $3}'"},
+	{ run_command, "disk %s — ", "df -h /dev/disk/by-uuid/020bf640-0d50-490b-82cd-dca247a6169c | grep \"/dev/\" |  awk '{print $4}' | tr '[:upper:]' '[:lower:]'"},
+	{ battery_perc, "bat %s%% ", "BAT0"		},
 /*	{ run_command, "[: %s] ", "frct"},	*/
 	
 //	{ run_command, "[  %s] ", "date +\"%d/%m/%Y\"" },
-	{ datetime, " %s ",           "%T "       },
+	{ datetime, "| %s ",           "%T  "       },
 
 };

@@ -5,7 +5,14 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "scientifica:pixelsize=16:antialias=true:autohint=true";
+
+
+// static char *font = "Iosevka Nerd Font:pixelsize=13:antialias=true:autohint=true;font_weight=medium";
+
+static char *font = "JetBrains Mono:pixelsize=13:antialias=true:autohint=true;font_weight=medium";
+
+// static char *font = "DM Mono:pixelsize=12:antialias=true:autohint=true;font_weight=medium";
+
 static char *font2[] = { "Hack Nerd Font:pixelsize=12:antialias=true:autohint=true" };
 static int borderpx = 4;
 
@@ -74,7 +81,7 @@ static unsigned int cursorthickness = 2;
  *    Bold affects lines thickness if boxdraw_bold is not 0. Italic is ignored.
  * 0: disable (render all U25XX glyphs normally from the font).
  */
-const int boxdraw = 1;
+const int boxdraw = 0;
 const int boxdraw_bold = 0;
 
 /* braille (U28XX):  1: render as adjacent "pixels",  0: use font */
@@ -107,44 +114,48 @@ char *termname = "xterm-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.8;
+float alpha = 0.85;
 float alphaOffset = 0.0;
 float alphaUnfocus;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	"#1d2021", /* hard contrast: #1d2021 / soft contrast: #32302f */
-	"#cc241d",
-	"#98971a",
-	"#d79921",
-	"#458588",
-	"#b16286",
-	"#689d6a",
-	"#a89984",
-	"#928374",
-	"#fb4934",
-	"#b8bb26",
-	"#fabd2f",
-	"#83a598",
-	"#d3869b",
-	"#8ec07c",
-	"#ebdbb2",
-	[255] = 0,
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#add8e6", /* 256 -> cursor */
-	"#555555", /* 257 -> rev cursor*/
-	"#000000", /* 258 -> bg */
-	"#ebdbb2", /* 259 -> fg */
+  /* 8 normal colors */
+  "#000000", /* black   */
+  "#f07178", /* red     */
+  "#c3e88d", /* green   */
+  "#ffcb6b", /* yellow  */
+  "#82aaff", /* blue    */
+  "#c792ea", /* magenta */
+  "#89ddff", /* cyan    */
+  "#eeffff", /* white   */
+
+  "#000000", /* black   */
+  "#f07178", /* red     */
+  "#c3e88d", /* green   */
+  "#ffcb6b", /* yellow  */
+  "#82aaff", /* blue    */
+  "#c792ea", /* magenta */
+  "#89ddff", /* cyan    */
+  "#eeffff", /* white   */
+  /* 8 bright colors */
+
+  /* special colors */
+  [256] = "#0f111a", /* background */
+  [257] = "#8f93a2", /* foreground */
+  [258] = "#0f111a",
+  [259] = "#8f93a2",
 };
+
 
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 259;
-unsigned int defaultbg = 258;
-unsigned int defaultcs = 256;
+unsigned int defaultfg = 257;
+unsigned int defaultbg = 256;
+static unsigned int defaultcs = 257;
 unsigned int defaultrcs = 257;
 unsigned int background = 258;
 
@@ -155,11 +166,14 @@ unsigned int background = 258;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 6;
+static unsigned int cursorshape = 6; // 6, previously.
 
 /*
  * Default columns and rows numbers
  */
+unsigned int defaultitalic = 7;
+unsigned int defaultunderline = 7;
+
 
 static unsigned int cols = 80;
 static unsigned int rows = 24;

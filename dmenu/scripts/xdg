@@ -1,0 +1,2 @@
+#!/bin/bash
+xdg-open "/home/$(whoami)/$(ls -1 /home/$(whoami) | dmenu)"
