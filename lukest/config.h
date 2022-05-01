@@ -9,7 +9,7 @@
 
 // static char *font = "Iosevka Nerd Font:pixelsize=13:antialias=true:autohint=true;font_weight=medium";
 
-static char *font = "JetBrains Mono:pixelsize=13:antialias=true:autohint=true;font_weight=medium";
+static char *font = "CozetteVector:pixelsize=12:antialias=true:autohint=true;font_weight=medium";
 
 // static char *font = "DM Mono:pixelsize=12:antialias=true:autohint=true;font_weight=medium";
 
@@ -122,29 +122,29 @@ float alphaUnfocus;
 static const char *colorname[] = {
   /* 8 normal colors */
   "#000000", /* black   */
-  "#f07178", /* red     */
-  "#c3e88d", /* green   */
-  "#ffcb6b", /* yellow  */
-  "#82aaff", /* blue    */
-  "#c792ea", /* magenta */
-  "#89ddff", /* cyan    */
-  "#eeffff", /* white   */
+  "#cc241d", /* red     */
+  "#98971a", /* green   */
+  "#d79921", /* yellow  */
+  "#458588", /* blue    */
+  "#b16286", /* magenta */
+  "#689d6a", /* cyan    */
+  "#fbf1c7", /* white   */
 
-  "#000000", /* black   */
-  "#f07178", /* red     */
-  "#c3e88d", /* green   */
-  "#ffcb6b", /* yellow  */
-  "#82aaff", /* blue    */
-  "#c792ea", /* magenta */
-  "#89ddff", /* cyan    */
-  "#eeffff", /* white   */
+  "#050505", /* black   */
+  "#fb4934", /* red     */
+  "#b8bb26", /* green   */
+  "#fabd2f", /* yellow  */
+  "#83a598", /* blue    */
+  "#d3869b", /* magenta */
+  "#8ec07c", /* cyan    */
+  "#fbf1c7", /* white   */
   /* 8 bright colors */
 
   /* special colors */
-  [256] = "#0f111a", /* background */
-  [257] = "#8f93a2", /* foreground */
-  [258] = "#0f111a",
-  [259] = "#8f93a2",
+  [256] = "#121212", /* background */
+  [257] = "#ebdbb2", /* foreground */
+  [258] = "#121212",
+  [259] = "#ebdbb2",
 };
 
 

@@ -23,15 +23,15 @@ static const unsigned int ulinestroke	= 2;	/* thickness / height of the underlin
 static const unsigned int ulinevoffset	= 0;	/* how far above the bottom of the bar the line should appear */
 static const int ulineall 		= 0;	/* 1 to show underline on all tags, 0 for just the active ones */
 // static const char *fonts[]		=	{ "DM Mono:size=10" ,"Hack Nerd Font:size=9", "Font Awesome 6 Free:size=9" };
-static const char *fonts[]		=	{ "Iosevka Nerd Font:size=10" ,"Hack Nerd Font:size=9", "Font Awesome 6 Free:size=9" };
+static const char *fonts[]		=	{ "CozetteVector:size=9" ,"Hack Nerd Font:size=9", "Font Awesome 6 Free:size=9" };
 // static const ichar *fonts[]			=	{ "scientifica Nerd Font:size=11" };
 // static const char *fonts[]			=	{ "JetBrainsMonoMedium Nerd Font:size=10" };
 static const char dmenufont[]       = "Hack Nerd Font:size=12";
-static const char col_gray1[]       = "#0f111a"; //  1d2021 050505 161616 100914 prev #00020e    
-static const char col_gray2[]       = "#717cb4"; // 6272a4 504945 ab7ac0 prev a45a30 df4418  c5cce1 #4f10d6 #ffb86c #fabd2f
-static const char col_gray3[]       = "#8f93a2"; // prev d5c4a1 #ff79c6 % prev #808080
-static const char col_gray4[]       = "#8f93a2"; // 6272a4 427b58 d65d0e ab7ac0 a45a30 4eb500 prev f72504 #ffb86c & prev #6ccc8f & 4b78ff
-static const char col_gray5[]		= "#181a1f";
+static const char col_gray1[]       = "#121212"; //  1d2021 050505 161616 100914 prev #00020e    
+static const char col_gray2[]       = "#665c54"; // 6272a4 504945 ab7ac0 prev a45a30 df4418  c5cce1 #4f10d6 #ffb86c #fabd2f
+static const char col_gray3[]       = "#bdae93"; // prev d5c4a1 #ff79c6 % prev #808080
+static const char col_gray4[]       = "#d5c4a1"; // 6272a4 427b58 d65d0e ab7ac0 a45a30 4eb500 prev f72504 #ffb86c & prev #6ccc8f & 4b78ff
+static const char col_gray5[]		= "#1d2021";
 static const char *colors[][3]      = {
     /*               fg         bg         border   */
     [SchemeNorm] = { col_gray3, col_gray1, col_gray2 }, // prev col_cyan
